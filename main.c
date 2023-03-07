@@ -47,7 +47,37 @@ int main(int argc, char *argv[])
     int selection = get_int("What is your selection?\n");
 
     //TODO:: Write a 10 case switch statement to run the appropriate function.
+    switch (selection)
+    {
+        case 0:
+            modulo_testing();
+            break;
+        case 1:
+            integer_division_testing();
+            break;
+        case 2:
+            float_cast_to_integer_division_testing();
+            break;
+        case 3:
+            for_loop_testing();
+            break;
+        case 4:
+            integer_float_addition();
+            break;
+        case 5:
+            print_ascii_string_value();
+            break;
+       
+        case 6:
+            print_provinces();
+            break;
+        case 7:
+            rock_paper_scissors();
+            break;
+        default:
+            break;
 
+    }
     return 0;
 }
 
@@ -56,31 +86,46 @@ int modulo_testing()
 
     //TODO:: Get 2 ints and run the modulo calculation
     //TODO:: Print out the result using the commented out printf
+    int x = get_int("enter the division you want the reminder of\n");
+    int y = get_int("enter the divider you want the reminder of\n");
+    int modulo = x % y;
 
-    //printf("The remainder of %d divided by %d is %d", x, y, modulo);
+    printf("The remainder of %d divided by %d is %d", x, y, modulo);
     return 1;
 }
 
 int integer_division_testing()
 {
+     int x = get_int("enter the division you want the reminder of\n");
+    int y = get_int("enter the divider you want the reminder of\n");
+
+    int result = x / y;
 
     //TODO:: Get 2 ints and run the division calculation
     //TODO:: Print out the result using the commented out printf
 
-    //printf("The result of %d divided by %d is %d", x, y, result);
+    printf("The result of %d divided by %d is %d", x, y, result);
 
     return result;
 }
 
 int float_cast_to_integer_division_testing()
 {
+    float x = get_float("enter the division you want the reminder of\n");
+    float y = get_float("enter the divider you want the reminder of\n");
+    
+    float result = x / y;
+
+    int int_result = (int)result;
+
+    
 
     //TODO:: Get 2 FLOATS and run the division calculation
     //TODO:: Print out the result using the commented out printf
     //You must use an explicit cast ie: (int)
 
 
-    //printf("The result of %d divided by %d is %f, once cast to an int the result is %d\n", x, y, result, int_result);
+    printf("The result of %f divided by %f is %f, once cast to an int the result is %d\n", x, y, result, int_result);
 
     return 1;
 }
@@ -97,17 +142,43 @@ float for_loop_testing()
 
    //TODO:: Write a for loop that increments a counter the appropriate amount of times by a custom amount
    //TODO:: Write an if check that will optionally decrement instead of incrementing.
+   
+  
+     
+   //this will run the same amount of time as the int specificed in loop_count
+    for(int iterator=0; iterator<loop_count; iterator++) 
+    {
+        //if the is_positive boolean is false , change to a decreament with minus
+        if (is_positive)
+        {
+            counter = counter + increment;
 
-    //printf("The final value of the counter is %f\n", counter);
+        }
+        else
+        {
+            counter = counter - increment;
+        }
+        
+        
+    }
+      
+
+
+
+    printf("The final value of the counter is %f\n", counter);
 
     return counter;
 }
 
 float integer_float_addition()
 {
+     int x = get_int("Enter an integer:\n");
+     float y = get_float("Enter a float:\n");
+     float result = x + y;
     //Get an int and a float and add them together, make sure the result comes out as a float
 
-    //printf("The result of %d plus %f is %f", x, y, result);
+    printf("The result of %d plus %f is %f", x, y, result);
+
 
     return 1.0;
 }
@@ -116,6 +187,21 @@ string print_ascii_string_value()
 {
     //TODO:: Write a while loop that takes a string that you query the user for then print out each letter with their matching ascii value
     //TODO:: Also print out the characters position in the string  
+    string str = get_string("what string do you want to know  the ASCII value of the letter of?");
+
+    int strsize = strlen(str);
+
+    int i = 0;
+
+    while(i < strsize)
+    {
+        //the first char of the str can be accessed with str[0]
+        //printf statement for each letter
+        printf("the char  at position %d is %c and the ASCII value is %d", i, str[i], str[i]);
+        i++;
+        
+    
+    }
 }
 
 void change_machine()
