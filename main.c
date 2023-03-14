@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
         case 6:
             print_provinces();
             break;
-        case 7:
+        case 8:
             rock_paper_scissors();
             break;
         default:
@@ -221,12 +221,24 @@ void change_machine()
 
 string rock_paper_scissors()
 {
+    int number_choice;
+    int ai_number_choice;
+    do {
+        number_choice = get_int("make a chice:\n 1.Rock\n 2.paper\n 3.sicisors\n")
+    } while (number_choice> 0 && number_choice < 4);
+
+    string ai_choice = 
+    
+
+
     //TODO:: Query the user for an int between 1 and 3 for their choice of rock, paper scissors.
     //      Use a do while loop to guarantee their input is valid
 
     // Generates a pseudo random int between 0 and 29
     // Use this to determine the "AI" choice
     int random = rand() % 30;
+
+    ai_number_choice = (random + 10) / 10 ;
 
    //TODO:: Write the game logic with if checks and determine who won
 
@@ -257,6 +269,7 @@ void vigenere_cipher()
     string message = get_string("What is the message to encode? ");
 
     string key = get_string("What is your encoding key? ");
+    
 
     //TODO:: Write the for loop for the vigenere cipher
 }
@@ -277,7 +290,7 @@ char vigenere_offset_letter(char msgLtr, char keyLtr)
     //Re-add the capital offset so the shifted message letter regains it's original cases
     ltr_position = (ltr_position + key_offset) % 26 + capital_offset;
 
-    return (char)ltr_position;
+    return (char)ltr_position; 
 }
 
 //Convenice function you can call

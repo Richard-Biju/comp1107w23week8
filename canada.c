@@ -5,14 +5,10 @@ const char *PROVINCES[] = {"Alberta", "British Columbia", "Manitoba", "New Bruns
 
 void print_provinces()
 {
-    //TODO:: Write a for loop that iterates over the PROVINCES array and prints out how many letters is contained in each
     int province_size = sizeof(PROVINCES)/sizeof(PROVINCES[0]);
-
-    for (int i = 0; i< province_size; i++)
+    for (int iterator = 0; iterator < province_size; iterator++)
     {
-        printf("%s
-
+         int province_letter_count = strlen(PROVINCES[iterator]);
+        printf("number of letters in %s is %d\n", PROVINCES[iterator], province_letter_count );
     }
-    
-
 }
